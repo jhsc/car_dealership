@@ -1,0 +1,18 @@
+version: "3"
+services:
+  frontend:
+    build: ./frontend
+    image: cars_frontend
+    environment:
+      PORT: 8080
+      CARS_API_ADDRESS: http://cars-api:8085
+    ports:
+      - 8080:8080
+    depends_on:
+      - cars-api
+
+  cars-api:
+    build: ./backend
+    image: cars-api
+    ports:
+      - 8085:8085
