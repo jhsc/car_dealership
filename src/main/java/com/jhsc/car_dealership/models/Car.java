@@ -30,6 +30,38 @@ public class Car {
 
   }
 
+  public boolean isHasHeatedSeats() {
+    return hasHeatedSeats;
+  }
+
+  public boolean isHasNavigation() {
+    return hasNavigation;
+  }
+
+  public boolean isHasPowerWindows() {
+    return hasPowerWindows;
+  }
+
+  public boolean isHasLowMiles() {
+    return hasLowMiles;
+  }
+
+  public boolean isFourWheelDrive() {
+    return isFourWheelDrive;
+  }
+
+  public boolean isHasSunroof() {
+    return hasSunroof;
+  }
+
+  public double getPrice() {
+    return price;
+  }
+
+  public int getYear() {
+    return year;
+  }
+
   public String getMake() {
     return make;
   }
