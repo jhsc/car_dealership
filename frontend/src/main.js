@@ -15,6 +15,11 @@ import store from './store'
 
 Vue.config.productionTip = false
 
+// Multi select box
+import Multiselect from 'vue-multiselect'
+  // register globally
+Vue.component('multiselect', Multiselect)
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

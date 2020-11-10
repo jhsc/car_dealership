@@ -8,7 +8,7 @@
         <h1>
           Cars
           <transition name="fade">
-            <small v-if="total">({{ total }})</small>
+            <small v-if="total">Total Records: ({{ total }})</small>
           </transition>
         </h1>
         </div>
@@ -24,19 +24,16 @@
         </div>
       </div>
 
-      <!-- <div class="row">
+      <div class="row">
         <div class="col-sm-10">
-          <input type="text"
-                class="form-control"
-                v-model="newTask"
-                @keyup.enter="addTask"
-                placeholder="New task"
-          >
+
+        <multiselect v-model="value" :options="colorOptions"></multiselect>
+
         </div>
         <div class="col-sm-2 text-right">
           <button type="submit" class="btn btn-primary" @click="addTask" >Add todo</button>
         </div>
-      </div> -->
+      </div>
 
       <div class="row">
         <transition-group name="fade" tag="ul" class="no-bullet list-group col-sm-12 my-4">
@@ -58,7 +55,7 @@ import Spinner from '@/components/common/Spinner'
 
 export default {
   name: 'cars',
-  components: {AppNav, CarItem, Spinner},
+  components: {AppNav, CarItem, Spinner, Multiselect},
   props: {
     cars: {
       default: function () {
@@ -70,7 +67,8 @@ export default {
     return {
       isProcessing: false,
       errorMessage: '',
-      newTask: ''
+      value: null,
+      colorOptions: ['Red', 'Grey', 'White']
     }
   },
   created () {
@@ -95,41 +93,6 @@ export default {
         this.errorMessage = JSON.stringify(error.body) + '. Response code: ' + error.status
       })
     }
-
-    // // addTask () {
-    // //   if (this.newTask) {
-    // //     this.isProcessing = true
-    // //     this.errorMessage = ''
-
-    // //     var task = {
-    // //       content: this.newTask
-    // //     }
-
-    // //     this.$http.post('/todos', task).then(response => {
-    // //       this.newTask = ''
-    // //       this.isProcessing = false
-    // //       this.tasks.push(task)
-    // //     }, error => {
-    // //       this.isProcessing = false
-    // //       this.errorMessage = JSON.stringify(error.body) + '. Response code: ' + error.status
-    // //     })
-    // //   }
-    // // },
-
-    // // removeTask (index) {
-    // //   const item = this.tasks[index]
-
-    // //   this.isProcessing = true
-    // //   this.errorMessage = ''
-
-    // //   this.$http.delete('/todos/' + item.id).then(response => {
-    // //     this.isProcessing = false
-    // //     this.tasks.splice(index, 1)
-    // //   }, error => {
-    // //     this.isProcessing = false
-    // //     this.errorMessage = JSON.stringify(error.body) + '. Response code: ' + error.status
-    // //   })
-    // }
   }
 }
 </script>
