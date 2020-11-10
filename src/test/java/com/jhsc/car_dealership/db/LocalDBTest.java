@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -19,7 +20,9 @@ public class LocalDBTest {
     Car car2 = new Car();
     car2.setColor("White");
 
-    List<Car> cars = List.of(car1, car2);
+    List<Car> cars = new ArrayList<Car>();
+    cars.add(car1);
+    cars.add(car2);
 
     LocalDB db = new LocalDB();
     List<Car> result = cars.stream().filter(db.byColor("Red")).collect(Collectors.toList());
@@ -34,7 +37,9 @@ public class LocalDBTest {
     Car car2 = new Car();
     car2.setHasSunroof(false);
 
-    List<Car> cars = List.of(car1, car2);
+    List<Car> cars = new ArrayList<Car>();
+    cars.add(car1);
+    cars.add(car2);
 
     LocalDB db = new LocalDB();
     List<Car> result = cars.stream().filter(db.bySunRoof("true")).collect(Collectors.toList());
@@ -49,7 +54,9 @@ public class LocalDBTest {
     Car car2 = new Car();
     car2.setHasFourWheelDrive(false);
 
-    List<Car> cars = List.of(car1, car2);
+    List<Car> cars = new ArrayList<Car>();
+    cars.add(car1);
+    cars.add(car2);
 
     LocalDB db = new LocalDB();
     List<Car> result = cars.stream().filter(db.byFourWheelDrive("true")).collect(Collectors.toList());
@@ -64,7 +71,9 @@ public class LocalDBTest {
     Car car2 = new Car();
     car2.setHasLowMiles(false);
 
-    List<Car> cars = List.of(car1, car2);
+    List<Car> cars = new ArrayList<Car>();
+    cars.add(car1);
+    cars.add(car2);
 
     LocalDB db = new LocalDB();
     List<Car> result = cars.stream().filter(db.byLowMiles("true")).collect(Collectors.toList());
@@ -79,7 +88,9 @@ public class LocalDBTest {
     Car car2 = new Car();
     car2.setHasPowerWindows(false);
 
-    List<Car> cars = List.of(car1, car2);
+    List<Car> cars = new ArrayList<Car>();
+    cars.add(car1);
+    cars.add(car2);
 
     LocalDB db = new LocalDB();
     List<Car> result = cars.stream().filter(db.byPowerWindows("true")).collect(Collectors.toList());
@@ -94,7 +105,9 @@ public class LocalDBTest {
     Car car2 = new Car();
     car2.setHasNavigation(false);
 
-    List<Car> cars = List.of(car1, car2);
+    List<Car> cars = new ArrayList<Car>();
+    cars.add(car1);
+    cars.add(car2);
 
     LocalDB db = new LocalDB();
     List<Car> result = cars.stream().filter(db.byNavigation("true")).collect(Collectors.toList());
@@ -109,7 +122,9 @@ public class LocalDBTest {
     Car car2 = new Car();
     car2.setHasHeatedSeats(false);
 
-    List<Car> cars = List.of(car1, car2);
+    List<Car> cars = new ArrayList<Car>();
+    cars.add(car1);
+    cars.add(car2);
 
     LocalDB db = new LocalDB();
     List<Car> result = cars.stream().filter(db.byHeatedSeats("true")).collect(Collectors.toList());
@@ -124,7 +139,12 @@ public class LocalDBTest {
     Car car3 = new Car("3", "Ford", 2012, "Red", 1535.00, false, false, false, false, false, false);
     Car car4 = new Car("4", "Ford", 2018, "White", 1606.00, true, false, true, false, true, false);
 
-    List<Car> cars = List.of(car1, car2, car3, car4);
+    // List<Car> cars = List.of(car1, car2, car3, car4);
+    List<Car> cars = new ArrayList<Car>();
+    cars.add(car1);
+    cars.add(car2);
+    cars.add(car3);
+    cars.add(car4);
 
     LocalDB db = new LocalDB(cars);
     HashMap<String, String> params = new HashMap<String, String>();
@@ -142,7 +162,11 @@ public class LocalDBTest {
     Car car3 = new Car("3", "Ford", 2012, "Red", 1535.00, false, false, false, false, false, false);
     Car car4 = new Car("4", "Ford", 2018, "White", 1606.00, true, false, true, false, true, false);
 
-    List<Car> cars = List.of(car1, car2, car3, car4);
+    List<Car> cars = new ArrayList<Car>();
+    cars.add(car1);
+    cars.add(car2);
+    cars.add(car3);
+    cars.add(car4);
 
     LocalDB db = new LocalDB(cars);
     HashMap<String, String> params = new HashMap<String, String>();

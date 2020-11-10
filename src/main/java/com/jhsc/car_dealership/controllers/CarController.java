@@ -34,12 +34,6 @@ public class CarController {
     }
   }
 
-  @GetMapping("/cars/filter")
-  public List<Car> greeting(@RequestParam(value = "color") String color) throws Exception {
-
-    return db.filterByColor(color);
-  }
-
   @GetMapping("/")
   public String home() {
     return "hello from spring Boot";
