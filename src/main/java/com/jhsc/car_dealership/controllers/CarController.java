@@ -1,6 +1,5 @@
 package com.jhsc.car_dealership.controllers;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -31,10 +30,8 @@ public class CarController {
       return new ResponseEntity<>(cars, HttpStatus.OK);
 
     } catch (Exception e) {
-      // TODO: handle exception
       return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
     }
-    // return db.getAllCars();
   }
 
   @GetMapping("/cars/filter")

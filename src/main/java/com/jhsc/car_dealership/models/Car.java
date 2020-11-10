@@ -12,13 +12,22 @@ public class Car {
   private String color;
   private double price;
   private boolean hasSunroof;
-  private boolean isFourWheelDrive;
+  @JsonProperty("isFourWheelDrive")
+  private boolean hasFourWheelDrive;
   private boolean hasLowMiles;
   private boolean hasPowerWindows;
   private boolean hasNavigation;
   private boolean hasHeatedSeats;
 
   public Car() {
+  }
+
+  public boolean isHasFourWheelDrive() {
+    return hasFourWheelDrive;
+  }
+
+  public void setHasFourWheelDrive(boolean hasFourWheelDrive) {
+    this.hasFourWheelDrive = hasFourWheelDrive;
   }
 
   public boolean isHasHeatedSeats() {
@@ -51,14 +60,6 @@ public class Car {
 
   public void setHasLowMiles(boolean hasLowMiles) {
     this.hasLowMiles = hasLowMiles;
-  }
-
-  public boolean isFourWheelDrive() {
-    return isFourWheelDrive;
-  }
-
-  public void setFourWheelDrive(boolean isFourWheelDrive) {
-    this.isFourWheelDrive = isFourWheelDrive;
   }
 
   public boolean isHasSunroof() {
@@ -109,7 +110,7 @@ public class Car {
     this.setColor(color);
     this.setPrice(price);
     this.setHasSunroof(hasSunroof);
-    this.setFourWheelDrive(isFourWheelDrive);
+    this.setHasFourWheelDrive(isFourWheelDrive);
     this.setHasLowMiles(hasLowMiles);
     this.setHasPowerWindows(hasPowerWindows);
     this.setHasNavigation(hasNavigation);
