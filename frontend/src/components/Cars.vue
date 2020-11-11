@@ -34,6 +34,7 @@
           <multiselect v-model="sunRoofValue" :options="booleanOptions" placeholder="Sunroof?"></multiselect>
         </div>
         <div class="col-sm-2 text-right">
+          <br>
           <button type="submit" class="btn btn-primary" @click="query" >Query</button>
         </div>
       </div>

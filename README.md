@@ -1,12 +1,29 @@
 # Project Selection
 
+## Domain
+
 Car Dealership applicaiton which provides a simple RESTful API to retrieve cars from an inventory list. With optional query params user can retrieve specific cars.
+
+## Interface
+
+Car Dealership is powered by a Vue application which has multi selector for the filter options.
 
 # Docker
 
-Easiest way to get started is to build and run with Docker.
+Easiest way to get started is to build and run with Docker and DockerCompose.
 
-## Build image
+```sh
+# Will build and run the stack
+docker-compose up --build
+```
+
+# Run Application
+
+Then go to http://127.0.0.1:8080 for web UI.
+
+For Further details about the Domain please look at the following.
+
+## Build image(backend Java)
 
 ```
 cd backend/
