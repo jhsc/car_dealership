@@ -1,5 +1,7 @@
 # Project Selection
 
+Car Dealership.
+
 ## Domain
 
 Car Dealership applicaiton which provides a simple RESTful API to retrieve cars from an inventory list. With optional query params user can retrieve specific cars.
