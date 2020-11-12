@@ -10,6 +10,11 @@ Car Dealership applicaiton which provides a simple RESTful API to retrieve cars 
 
 Car Dealership is powered by a Vue application which has multi selector for the filter options.
 
+## Screenshots
+
+<img src="screenshots/1.png" width="600">
+<img src="screenshots/2.png" width="600">
+
 # Docker
 
 Easiest way to get started is to build and run with Docker and DockerCompose.
