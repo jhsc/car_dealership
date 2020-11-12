@@ -13,14 +13,3 @@ export default new Router({
     }
   ]
 })
-
-// function requireLoggedIn (to, from, next) {
-//   if (!Auth.isLoggedIn()) {
-//     next({
-//       path: '/login',
-//       query: { redirect: to.fullPath }
-//     })
-//   } else {
-//     next()
-//   }
-// }

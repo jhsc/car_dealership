@@ -87,7 +87,7 @@ export default {
     }
   },
   created () {
-    this.loadCars()
+    this.query()
   },
   computed: {
     total () {
@@ -101,19 +101,6 @@ export default {
     }
   },
   methods: {
-    loadCars () {
-      this.isProcessing = true
-      this.errorMessage = ''
-      this.$http.get('/cars').then(response => {
-        for (var i in response.body) {
-          this.cars.push(response.body[i])
-        }
-        this.isProcessing = false
-      }, error => {
-        this.isProcessing = false
-        this.errorMessage = JSON.stringify(error.body) + '. Response code: ' + error.status
-      })
-    },
     query () {
       this.isProcessing = true
       this.errorMessage = ''
