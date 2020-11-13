@@ -112,7 +112,7 @@ export default {
       if (this.sunRoofValue) {
         localParams['sun_roof'] = this.sunRoofValue
       }
-      this.$http.get('/cars', {params: localParams}).then(response => {
+      this.$http.get('http://0.0.0.0:8085/cars', {params: localParams}).then(response => {
         for (var i in response.body) {
           this.cars.push(response.body[i])
         }

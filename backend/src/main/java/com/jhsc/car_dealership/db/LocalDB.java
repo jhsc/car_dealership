@@ -3,6 +3,7 @@ package com.jhsc.car_dealership.db;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Predicate;
@@ -71,6 +72,10 @@ public class LocalDB {
     return car -> car.isHasHeatedSeats() == Boolean.parseBoolean(heated_seats);
   }
 
+  public Comparator<Car> orderbyColor() {
+    return Comparator.comparing(Car::getColor);
+  }
+
   public List<Car> filter(Map<String, String> params) {
     Stream<Car> streamOfCars = cars.stream();
     // White list possible filter options.
@@ -94,6 +99,19 @@ public class LocalDB {
     }
     if (params.containsKey("heated_seats")) {
       streamOfCars = streamOfCars.filter(byHeatedSeats(params.get("heated_seats")));
+    }
+
+    if (params.containsKey("sort")) {
+      // sort=key1:asc
+      String[] sortValue = params.get("sort").split(":");
+      if (sortValue[0].equals("color")) {
+        if (sortValue[1].equals("asc")) {
+          streamOfCars = streamOfCars.sorted(orderbyColor());
+        } else {
+          streamOfCars = streamOfCars.sorted(orderbyColor().reversed());
+        }
+      }
+
     }
 
     return streamOfCars.collect(Collectors.toList());

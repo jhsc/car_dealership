@@ -30,6 +30,7 @@ public class CarController {
       return new ResponseEntity<>(cars, HttpStatus.OK);
 
     } catch (Exception e) {
+      System.out.println(e);
       return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
     }
   }
