@@ -34,13 +34,13 @@ For Further details about the Domain please look at the following.
 
 ```
 cd backend/
-docker build -t car_dealership .
+docker build -t cars-api .
 ```
 
 ## Run Container
 
 ```
-docker run --rm -p 8085:8085 car_dealership
+docker run --rm -p 8085:8085 cars-api
 ```
 
 PS. by default server runs on port 8085.
@@ -48,7 +48,7 @@ PS. by default server runs on port 8085.
 ## Run Test
 
 ```
- docker run --rm car_dealership sh ./mvnw test
+ docker run --rm cars-api sh ./mvnw test
 ```
 
 # Cars API
